@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{gets data from SF data portal}
   spec.description   = %q{gets data from SF data portal}
-  spec.homepage      = "none"
+  spec.homepage      = "https://github.com/markeban/sf_data"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

@@ -13,23 +13,13 @@ module SfData
     end
     
     def self.all
-      @locations = Unirest.get("https://data.sfgov.org/resource/wwmu-gmzc.json").body
-      create_locations(employees_array)
-    end
-
-    # def self.search(search_term)
-    #   employees_array = Unirest.get("https://data.cityofchicago.org/resource/xzkq-xp2w.json?$q=#{search_term}").body
-    #   create_employees(employees_array)
-    # end
-
-    private
-
-    def create_locations(array_of_hashes)
+      locations_array = Unirest.get("https://data.sfgov.org/resource/wwmu-gmzc.json").body
       locations = []
       locations_array.each do |location_hash|
-        locations << Location.new(location_hash)
+        locations << FilmLocation.new(location_hash)
       end
       return locations
     end
+      
   end
 end
